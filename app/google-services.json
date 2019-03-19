@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "906676937850",
+    "firebase_url": "https://qrcodesampleapp.firebaseio.com",
+    "project_id": "qrcodesampleapp",
+    "storage_bucket": "qrcodesampleapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906676937850:android:fd256e5641959c9e",
+        "android_client_info": {
+          "package_name": "com.gbazilio.qrcodescanner.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906676937850-tmlj7a12h3uhp4mtutlqcgdi3fh7pbgt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoW_PDdvp2u3XqAPkXTsddDqu75iZkQJ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
