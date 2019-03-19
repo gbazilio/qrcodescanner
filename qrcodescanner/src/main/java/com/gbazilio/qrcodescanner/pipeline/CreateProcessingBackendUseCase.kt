@@ -1,4 +1,4 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.pipeline
 
 import android.graphics.ImageFormat
 import android.media.ImageReader

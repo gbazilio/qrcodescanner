@@ -1,10 +1,11 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.pipeline
 
 import android.graphics.ImageFormat
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.util.Log
-import com.gbazilio.qrcodescanner.PreviewSize.Companion.DEFAULT_SIZE
+import com.gbazilio.qrcodescanner.pipeline.PreviewSize.Companion.DEFAULT_SIZE
+import com.gbazilio.qrcodescanner.utils.minSize
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Future

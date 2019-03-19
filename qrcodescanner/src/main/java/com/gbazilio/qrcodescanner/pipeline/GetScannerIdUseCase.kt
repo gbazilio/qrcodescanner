@@ -1,4 +1,4 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.pipeline
 
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraCharacteristics

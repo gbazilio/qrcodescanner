@@ -10,31 +10,34 @@
     <com.gbazilio.qrcodescanner.ScannerView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:streamType="single"
+            app:streamType="stream"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:id="@+id/scannerView"
-            app:layout_constraintBottom_toTopOf="@+id/button"/>
+            app:layout_constraintBottom_toTopOf="@+id/textView"/>
+
+    <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/textView"
+            app:layout_constraintBottom_toTopOf="@id/buttonSubscribe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginStart="8dp"/>
+
     <Button
-            android:text="Button"
+            android:text="@string/string_subscribe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button2"/>
-    <Button
-            android:text="+"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2" app:layout_constraintStart_toEndOf="@+id/button"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/button3"
+            android:id="@+id/buttonSubscribe" app:layout_constraintStart_toEndOf="@+id/buttonUnsubscribe"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/buttonUnsubscribe"
     />
     <Button
-            android:text="-"
+            android:text="@string/string_unsubscribe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button3" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/buttonUnsubscribe" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button2"/>
+            app:layout_constraintStart_toEndOf="@+id/buttonSubscribe"/>
 
 </android.support.constraint.ConstraintLayout>

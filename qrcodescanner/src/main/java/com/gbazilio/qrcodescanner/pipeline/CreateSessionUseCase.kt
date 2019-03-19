@@ -1,4 +1,4 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.pipeline
 
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraCaptureSession
@@ -7,6 +7,7 @@ import android.hardware.camera2.CaptureRequest
 import android.os.Handler
 import android.util.Log
 import android.view.Surface
+import com.gbazilio.qrcodescanner.utils.OnSessionConfigured
 import java.util.concurrent.*
 
 class CreateSessionUseCase(

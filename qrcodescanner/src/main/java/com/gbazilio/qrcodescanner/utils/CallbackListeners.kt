@@ -1,4 +1,4 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.utils
 
 import android.graphics.SurfaceTexture
 import android.hardware.camera2.CameraCaptureSession

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QRCodeScanner</string>
+    <string name="string_subscribe">Subscribe</string>
+    <string name="string_unsubscribe">Unsubscribe</string>
 </resources>

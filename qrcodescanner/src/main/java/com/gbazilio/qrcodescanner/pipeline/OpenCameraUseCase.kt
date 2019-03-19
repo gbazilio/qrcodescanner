@@ -1,4 +1,4 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.pipeline
 
 import android.Manifest
 import android.content.Context
@@ -9,6 +9,7 @@ import android.hardware.camera2.CameraManager
 import android.os.Build
 import android.os.Handler
 import android.util.Log
+import com.gbazilio.qrcodescanner.utils.OnCameraOpened
 import java.util.concurrent.*
 
 class OpenCameraUseCase(private val executor: ExecutorService,
@@ -43,7 +44,8 @@ class OpenCameraUseCase(private val executor: ExecutorService,
                     }
                 }
             } else {
-                cameraManager.openCamera(cameraId, OnCameraOpened { cameraDevice = it }, handler)
+                cameraManager.openCamera(cameraId,
+                    OnCameraOpened { cameraDevice = it }, handler)
             }
         } catch (e: CameraAccessException) {
             Log.e(TAG, e.message)

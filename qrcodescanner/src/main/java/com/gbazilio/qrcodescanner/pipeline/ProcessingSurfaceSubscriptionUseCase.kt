@@ -1,8 +1,7 @@
-package com.gbazilio.qrcodescanner
+package com.gbazilio.qrcodescanner.pipeline
 
 import android.media.ImageReader
 import android.os.Handler
-import android.util.Log
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetectorOptions
@@ -21,15 +20,15 @@ class ProcessingSurfaceSubscriptionUseCase(
     private val handler: Handler
 ) : Callable<Boolean> {
 
-    private lateinit var surface: ImageReader
-    private lateinit var previewSize: PreviewSize
+    private var surface: ImageReader? = null
+    private var previewSize: PreviewSize?= null
     private lateinit var streamType: StreamType
     private lateinit var notifyObserver: (String) -> Unit
 
     private val metadata by lazy {
         FirebaseVisionImageMetadata.Builder()
-            .setWidth(previewSize.width)
-            .setHeight(previewSize.height)
+            .setWidth(previewSize!!.width)
+            .setHeight(previewSize!!.height)
             .setFormat(FirebaseVisionImageMetadata.IMAGE_FORMAT_YV12)
             .build()
     }
@@ -42,8 +41,8 @@ class ProcessingSurfaceSubscriptionUseCase(
     }
 
     fun execute(
-        surface: ImageReader,
-        previewSize: PreviewSize,
+        surface: ImageReader?,
+        previewSize: PreviewSize?,
         streamType: StreamType,
         observer: (String) -> Unit
     ): Future<Boolean> {
@@ -55,7 +54,9 @@ class ProcessingSurfaceSubscriptionUseCase(
     }
 
     override fun call(): Boolean {
-        surface.setOnImageAvailableListener({
+        if (surface == null || previewSize == null) return false
+
+        surface!!.setOnImageAvailableListener({
             val latestImage = it.acquireNextImage() ?: return@setOnImageAvailableListener
 
             val plane = latestImage.planes[0]
